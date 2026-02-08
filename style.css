@@ -57,7 +57,7 @@ header {
 /* --- HERO --- */
 .hero {
     height: 85vh; min-height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("images/hero-desktop.jpg");
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("hero-desktop.jpg");
     background-size: cover; background-position: center;
     display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 1.5rem; margin-top: 85px;
@@ -94,7 +94,7 @@ header {
 
 /* --- IMPORT DUBAI --- */
 .import-dubai-section {
-    background: linear-gradient(to right, #000, transparent), url('images/vehicles/vip.jpg');
+    background: linear-gradient(to right, #000, transparent), url('vip.jpg');
     background-size: cover; padding: 4rem 1.5rem; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); margin: 3rem 0;
 }
 .import-content { max-width: 1200px; margin: auto; }
@@ -604,7 +604,7 @@ body {
 .hero-import {
     height: 80vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url("images/import-bg.jpg");
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url("import-bg.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
