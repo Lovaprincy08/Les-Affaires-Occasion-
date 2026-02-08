@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Importation Dubaï - Les Affaires Madagascar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Les Affaires" class="logo-circle">
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="occasion.html">Nos Occasions</a></li>
+                <li><a href="import.html" style="color:var(--gold);">Import Dubaï</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- HERO SECTION IMPORT -->
+    <section class="hero-import">
+        <div class="hero-content">
+            <h1 class="fade-in">Importation Directe Dubaï</h1>
+            <p class="fade-in">Commandez votre véhicule sur mesure depuis les Émirats. Transparence totale, prix imbattables et livraison garantie à Madagascar.</p>
+            
+            <div class="search-box-hero fade-in">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchImportInput" placeholder="Rechercher un véhicule d'import...">
+            </div>
+            
+            <div class="btn-container" style="margin-top:2rem;">
+                <a href="https://wa.me/261324452423?text=Bonjour, je souhaite un devis pour l'importation d'un véhicule depuis Dubaï" 
+                   class="btn-primary" target="_blank">
+                   <i class="fa-brands fa-whatsapp"></i> Devis personnalisé
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION AVANTAGES IMPORT -->
+    <section class="section" style="background: rgba(45, 90, 63, 0.1);">
+        <h2 class="fade-in">Pourquoi importer depuis Dubaï ?</h2>
+        <p class="section-subtitle fade-in">Les avantages d'une importation directe avec Les Affaires</p>
+        
+        <div class="services-container">
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-ship"></i>
+                <h3>Logistique Complète</h3>
+                <p>Nous gérons toute la chaîne : achat, inspection, transport maritime et livraison à Madagascar.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h3>Économie Garantie</h3>
+                <p>Jusqu'à 30% d'économie par rapport au marché local pour des véhicules souvent moins kilométrés.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Sécurité Totale</h3>
+                <p>Paiement sécurisé, photos et rapports d'inspection avant expédition, suivi en temps réel.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-file-contract"></i>
+                <h3>Administratif Inclus</h3>
+                <p>Nous nous chargeons de tous les documents : dédouanement, immatriculation et carte grise.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION VÉHICULES DISPONIBLES À L'IMPORT -->
+    <section class="section">
+        <div class="stock-info fade-in">
+            <div>
+                <h2 style="color: var(--gold); margin:0; font-size: 2rem;">Sélection Dubaï</h2>
+                <p style="color: var(--gray); margin:5px 0 0 0;">Nos meilleures opportunités d'importation</p>
+            </div>
+            <div class="import-status">
+                <i class="fa-solid fa-clock"></i> Délai moyen : 40 jours
+            </div>
+        </div>
+        
+        <div class="search-container fade-in">
+            <input type="text" id="searchImportListInput" placeholder="Rechercher par marque, modèle, budget...">
+        </div>
+
+        <div id="import-stock-container" class="vehicle-grid">
+            <p style="text-align:center; width:100%; color:gray; padding: 40px;">
+                <i class="fa-solid fa-spinner fa-spin" style="margin-right:10px;"></i>
+                Chargement des véhicules disponibles à l'import...
+            </p>
+        </div>
+        
+        <div style="text-align:center; margin-top:3rem; padding: 2rem; background: rgba(201,162,77,0.05); border-radius: 8px;">
+            <h3 style="color: var(--gold); margin-bottom:1rem;">Vous ne trouvez pas votre véhicule ?</h3>
+            <p style="color: var(--gray); max-width: 700px; margin: 0 auto 1.5rem auto;">
+                Notre réseau à Dubaï nous permet de sourcer pratiquement n'importe quel modèle.
+                Contactez-nous avec vos critères pour une recherche personnalisée.
+            </p>
+            <a href="https://wa.me/261324452423?text=Bonjour, je recherche un véhicule spécifique à importer depuis Dubaï. Voici mes critères :" 
+               class="btn-primary" target="_blank">
+               <i class="fa-brands fa-whatsapp"></i> Recherche personnalisée
+            </a>
+        </div>
+    </section>
+    
+    <!-- SECTION PROCESSUS D'IMPORT -->
+    <section class="section" style="background: #080808;">
+        <h2 class="fade-in">Processus d'Importation</h2>
+        <p class="section-subtitle fade-in">De la commande à la livraison à Madagascar</p>
+        
+        <div class="import-process">
+            <div class="process-step fade-in">
+                <div class="step-number">1</div>
+                <h3><i class="fa-solid fa-magnifying-glass"></i> Recherche & Sélection</h3>
+                <p>Nous sourçons le véhicule selon vos critères sur le marché de Dubaï.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">2</div>
+                <h3><i class="fa-solid fa-clipboard-check"></i> Inspection & Validation</h3>
+                <p>Inspection complète et envoi des photos/rapports avant achat.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">3</div>
+                <h3><i class="fa-solid fa-file-invoice-dollar"></i> Paiement & Logistique</h3>
+                <p>Paiement sécurisé et organisation du transport maritime.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">4</div>
+                <h3><i class="fa-solid fa-ship"></i> Transport & Suivi</h3>
+                <p>Expédition depuis Dubaï avec suivi en temps réel jusqu'à Tamatave.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">5</div>
+                <h3><i class="fa-solid fa-file-contract"></i> Dédouanement & Immatriculation</h3>
+                <p>Réception du véhicule et gestion de toutes les formalités administratives.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">6</div>
+                <h3><i class="fa-solid fa-key"></i> Livraison & Remise</h3>
+                <p>Livraison du véhicule prêt à rouler avec carte grise à Antananarivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DÉTAILS (identique aux autres pages) -->
+    <div id="vehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color:var(--gold); margin-bottom:1rem;"></h2>
+            <div id="modalGallery" class="modal-gallery"></div>
+            <p id="modalDesc" style="color:#ddd; margin-bottom:1.5rem; white-space: pre-line;"></p>
+            <button class="btn-secondary" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX (identique aux autres pages) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="prevImage()" aria-label="Image précédente">❮</button>
+            <button class="lightbox-next" onclick="nextImage()" aria-label="Image suivante">❯</button>
+        </div>
+        <div class="lightbox-img-container">
+            <img id="lightboxImg" src="" alt="Zoom" class="lightbox-img">
+        </div>
+        <div class="lightbox-dots" id="lightboxDots"></div>
+    </div>
+
+    <!-- BOUTON WHATSAPP FIXE -->
+    <a href="https://wa.me/261324452423" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Import Dubaï</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

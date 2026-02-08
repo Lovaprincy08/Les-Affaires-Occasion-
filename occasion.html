@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ajoutez cette balise meta dans le <head> pour un meilleur contrôle sur mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nos Occasions - Les Affaires Madagascar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Les Affaires" class="logo-circle">
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="occasion.html" style="color:var(--gold);">Nos Occasions</a></li>
+                <li><a href="index.html#import">Import Dubaï</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="section" style="margin-top:100px; min-height:80vh;">
+        <h2 class="fade-in">Toutes nos Occasions</h2>
+        <p class="section-subtitle fade-in">Trouvez le véhicule qui correspond à vos besoins.</p>
+        
+        <div class="search-container fade-in">
+            <input type="text" id="searchInput" placeholder="Rechercher une marque, un modèle, une année...">
+        </div>
+
+        <div id="all-stock-container" class="vehicle-grid">
+            <p style="text-align:center; width:100%; color:gray;">Chargement des véhicules...</p>
+        </div>
+    </section>
+
+    <div id="vehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color:var(--gold); margin-bottom:1rem;"></h2>
+            <div id="modalGallery" class="modal-gallery"></div>
+            <p id="modalDesc" style="color:#ddd; margin-bottom:1.5rem; white-space: pre-line;"></p>
+            <button class="btn-secondary" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox(event)" ...>&times;</span>
+    
+    <div class="lightbox-nav">
+        <button class="lightbox-prev" onclick="prevImage()" aria-label="Image précédente">❮</button>
+        <button class="lightbox-next" onclick="nextImage()" aria-label="Image suivante">❯</button>
+    </div>
+    
+    <div class="lightbox-img-container">
+        <img id="lightboxImg" src="" alt="Zoom" class="lightbox-img">
+    </div>
+    
+    <div class="lightbox-dots" id="lightboxDots"></div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

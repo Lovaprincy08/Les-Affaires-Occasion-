@@ -1,0 +1,1281 @@
+/* =======================
+   style.css - Les Affaires
+   ======================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --black: #0b0b0b;
+    --dark: #111;
+    --gold: #c9a24d;
+    --gold-soft: rgba(201,162,77,0.3);
+    --white: #f5f5f5;
+    --gray: #b5b5b5;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --green-primary: #2d5a3f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* --- ANIMATIONS --- */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.slide-in-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.slide-in-left.visible { opacity: 1; transform: translateX(0); }
+
+/* --- HEADER & NAV --- */
+header {
+    position: fixed; width: 100%; top: 0;
+    background-color: var(--green-primary);
+    border-bottom: 1px solid rgba(201,162,77,0.3);
+    z-index: 1000; height: 85px; transition: all 0.3s ease;
+}
+.navbar {
+    max-width: 1200px; margin: auto; padding: 0 1.5rem;
+    display: flex; justify-content: space-between; align-items: center; height: 100%;
+}
+.logo-circle {
+    height: 60px; width: 60px; background-color: var(--green-primary);
+    border: 2px solid #c9a24d; border-radius: 50%; object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease;
+}
+.logo-circle:hover { transform: rotate(10deg); }
+.nav-links { display: flex; list-style: none; gap: 1.8rem; }
+.nav-links a { text-decoration: none; color: var(--white); font-weight: 500; position: relative; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.hamburger { display: none; font-size: 1.5rem; color: var(--gold); cursor: pointer; }
+
+/* --- HERO --- */
+.hero {
+    height: 85vh; min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("images/hero-desktop.jpg");
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 1.5rem; margin-top: 85px;
+}
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); margin-bottom: 1rem; }
+.hero p { color: var(--gray); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+/* --- BOUTONS --- */
+.btn-primary, .btn-secondary {
+    padding: 0.9rem 2rem; font-size: 0.9rem; letter-spacing: 1.5px;
+    text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;
+    font-family: 'Poppins', sans-serif; font-weight: 600; text-decoration: none;
+    display: inline-block; margin: 5px; border-radius: 4px;
+}
+.btn-primary { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
+.btn-primary:hover { background: var(--gold); color: var(--black); transform: translateY(-3px); }
+.btn-secondary { background: var(--green-primary); border: 1px solid var(--green-primary); color: var(--white); }
+.btn-secondary:hover { background: transparent; border: 1px solid var(--white); transform: translateY(-3px); }
+
+/* --- SECTIONS --- */
+.section { padding: 4rem 1.5rem; max-width: 1200px; margin: auto; }
+.section h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center; color: var(--gold); margin-bottom: 1rem; }
+.section-subtitle { text-align: center; color: var(--gray); margin-bottom: 3rem; }
+
+/* --- SERVICES & CARDS --- */
+.services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.service-card {
+    background: var(--glass-bg); padding: 2rem 1.5rem;
+    border: 1px solid rgba(201,162,77,0.1); border-radius: 8px; text-align: center; transition: all 0.4s ease;
+}
+.service-card:hover { transform: translateY(-10px); border-color: var(--gold-soft); }
+.service-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem; }
+.service-card h3 { color: var(--white); margin-bottom: 1rem; }
+
+/* --- IMPORT DUBAI --- */
+.import-dubai-section {
+    background: linear-gradient(to right, #000, transparent), url('images/vehicles/vip.jpg');
+    background-size: cover; padding: 4rem 1.5rem; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); margin: 3rem 0;
+}
+.import-content { max-width: 1200px; margin: auto; }
+.import-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+.import-features { display: flex; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.feat { background: rgba(201,162,77,0.1); padding: 1rem; border-radius: 8px; text-align: center; min-width: 120px; }
+.feat span { display: block; font-size: 1.5rem; color: var(--gold); font-weight: 700; }
+
+/* --- VEHICULES GRILLE (Dynamique) --- */
+.vehicle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.vehicle-card {
+    background: #0e0e0e; border: 1px solid rgba(201,162,77,0.15); border-radius: 8px;
+    overflow: hidden; transition: all 0.4s ease; display: flex; flex-direction: column; position: relative;
+}
+.vehicle-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+.tag-occasion {
+    position: absolute; top: 15px; right: 15px; background: var(--gold); color: var(--black);
+    padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; z-index: 2;
+}
+.vehicle-image { width: 100%; height: 220px; overflow: hidden; background: #000; }
+.vehicle-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.vehicle-card:hover img { transform: scale(1.1); }
+.vehicle-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.vehicle-card h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Playfair Display', serif; }
+.vehicle-description { color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.5; flex-grow: 1; }
+.vehicle-meta { display: flex; flex-wrap: wrap; gap: 15px; color: var(--gray); font-size: 0.85rem; margin-bottom: 1rem; }
+.vehicle-meta span i { color: var(--gold); margin-right: 5px; }
+.vehicle-price { color: var(--gold); font-weight: 700; font-size: 1.4rem; margin: 10px 0 20px 0; display: block; }
+
+/* --- SEARCH BAR (Page Occasion) --- */
+.search-container {
+    max-width: 600px; margin: 0 auto 3rem auto; position: relative;
+}
+#searchInput {
+    width: 100%; padding: 1rem 1.5rem; background: rgba(255,255,255,0.05);
+    border: 1px solid var(--gold); border-radius: 50px; color: var(--white);
+    font-size: 1rem; font-family: 'Poppins', sans-serif; outline: none; transition: all 0.3s;
+}
+#searchInput:focus { background: rgba(255,255,255,0.1); box-shadow: 0 0 15px var(--gold-soft); }
+
+/* --- MODAL DETAILS --- */
+.modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(5px);
+    z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-content {
+    background: #151515; padding: 2rem; border: 1px solid var(--gold);
+    width: 100%; max-width: 800px; max-height: 90vh; overflow-y: auto;
+    position: relative; border-radius: 8px; animation: fadeUp 0.4s ease;
+}
+.close { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--white); cursor: pointer; z-index: 10; }
+.modal-gallery { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; }
+.modal-gallery img {
+    height: 100px; width: 150px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 1px solid transparent; transition: 0.3s;
+}
+.modal-gallery img:hover { border-color: var(--gold); opacity: 0.8; }
+
+/* --- LIGHTBOX (Zoom Image) --- */
+.lightbox {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.98); z-index: 3000; display: none;
+    align-items: center; justify-content: center;
+}
+.lightbox img { max-width: 90%; max-height: 90%; border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    /* AJOUTS CRITIQUES CI-DESSOUS */
+    z-index: 3010; /* Doit être supérieur au z-index des nav-links et dots */
+    width: 60px;   /* Zone de clic plus large pour le doigt */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.3); /* Aide à voir la zone sur mobile */
+    border-radius: 50%;
+}
+
+/* =======================
+   LIGHTBOX SWIPE AMELIORATIONS
+   ======================= */
+
+/* Indicateurs de navigation */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 3002;
+}
+
+.lightbox-prev, .lightbox-next {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid var(--gold);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Indicateur de position (dots) */
+.lightbox-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 3002;
+}
+
+.lightbox-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-dot.active {
+    background: var(--gold);
+    transform: scale(1.2);
+}
+
+/* Animation de swipe */
+.lightbox-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.lightbox-img.swipe-left {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.lightbox-img.swipe-right {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+/* Cacher les flèches sur mobile si le swipe est détecté */
+@media (max-width: 768px) {
+    .lightbox-prev, .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        opacity: 0.7;
+    }
+    
+    .lightbox-dots {
+        bottom: 10px;
+    }
+    
+    .lightbox-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* --- WHATSAPP & CONTACT --- */
+.whatsapp-float {
+    position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white;
+    padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; gap: 10px;
+    text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 3000;
+}
+.contact-section { background: #080808; padding: 3rem 1.5rem; text-align: center; margin-top: 3rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 85px; left: 0; width: 100%; background: var(--green-primary); padding: 1.5rem 0; z-index: 999; }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .hero h1 { font-size: 2rem; }
+    .import-text h2 { font-size: 1.8rem; }
+    .modal-content { padding: 1rem; }
+    .modal-gallery img { height: 80px; width: 100px; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* =======================
+   AJOUTS POUR OPTIMISATION MOBILE
+   ======================= */
+
+/* Ajustements généraux pour mobile */
+@media (max-width: 768px) {
+    /* HEADER - Augmenter la hauteur pour un meilleur touch */
+    header {
+        height: 70px;
+    }
+    
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .logo-circle {
+        height: 50px;
+        width: 50px;
+    }
+    
+    /* HERO - Améliorer l'adaptation */
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+        margin-top: 70px;
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* BOUTONS - Plus grands pour le touch */
+    .btn-primary, .btn-secondary {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+        margin: 8px auto;
+        display: block;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* SECTIONS - Meilleur espacement */
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* GRID VEHICULES - Une seule colonne */
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .vehicle-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .vehicle-image {
+        height: 180px;
+    }
+    
+    .vehicle-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* IMPORT DUBAI - Améliorations */
+    .import-dubai-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+        background-position: center;
+    }
+    
+    .import-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .import-features {
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .feat {
+        min-width: 100px;
+        padding: 0.8rem;
+    }
+    
+    /* MODAL - Plein écran sur mobile */
+    .modal-content {
+        width: 95%;
+        height: 90vh;
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+    }
+    
+    .modal-gallery {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .modal-gallery img {
+        height: 80px;
+        width: 120px;
+        flex-shrink: 0;
+    }
+    
+    /* LIGHTBOX - Améliorations touch */
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 2.5rem;
+        z-index: 3001;
+    }
+    
+    .lightbox img {
+        max-width: 95%;
+        max-height: 80%;
+    }
+    
+    /* MENU MOBILE - Améliorations */
+    .nav-links {
+        padding: 1rem 0;
+        top: 70px;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .hamburger {
+        font-size: 1.8rem;
+        padding: 0.5rem;
+    }
+    
+    /* RECHERCHE - Pleine largeur */
+    .search-container {
+        margin: 0 1rem 2rem 1rem;
+    }
+    
+    #searchInput {
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    /* CONTACT - Meilleur affichage */
+    .contact-section {
+        padding: 2rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .contact-section p {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Très petits écrans (téléphones en portrait) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    .section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .vehicle-price {
+        font-size: 1.3rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.9rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Améliorations pour tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .vehicle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Correction pour éviter le zoom sur les inputs iOS */
+@media (max-width: 768px) {
+    input, textarea, select {
+        font-size: 16px !important; /* Empêche le zoom automatique sur iOS */
+    }
+}
+
+/* Amélioration du touch sur les éléments interactifs */
+.vehicle-card, .btn-primary, .btn-secondary, .nav-links a {
+    -webkit-tap-highlight-color: rgba(201, 162, 77, 0.3);
+    touch-action: manipulation;
+}
+
+/* Optimisation des transitions pour mobile */
+@media (max-width: 768px) {
+    .vehicle-card {
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .vehicle-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Correction de l'overflow horizontal */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Amélioration de la lisibilité du texte sur mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    p, .vehicle-description, .vehicle-meta {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+/* Styles pour lightbox-img-container et lightbox-dots s'ils n'existent pas */
+.lightbox-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#lightboxImg {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#lightboxDots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 3002;
+}
+/* =======================
+   PAGE IMPORT - STYLES SPÉCIFIQUES
+   ======================= */
+
+/* Hero Import */
+.hero-import {
+    height: 80vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url("images/import-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 85px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-import::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(45, 90, 63, 0.2) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.hero-import .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-import h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero-import p {
+    color: #e0e0e0;
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Barre de recherche Hero améliorée */
+.search-box-hero {
+    position: relative;
+    max-width: 650px;
+    margin: 3rem auto 0;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    padding: 8px 25px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(201, 162, 77, 0.15);
+}
+
+.search-box-hero:focus-within {
+    background: rgba(20, 20, 20, 0.95);
+    box-shadow: 0 15px 40px rgba(201, 162, 77, 0.25);
+    transform: translateY(-2px);
+    border-color: #d4b560;
+}
+
+.search-box-hero i {
+    color: var(--gold);
+    margin-right: 20px;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+.search-box-hero input {
+    border: none;
+    background: transparent;
+    color: white;
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.1rem;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.search-box-hero input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+/* Processus d'import */
+.import-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 4rem auto 0;
+    position: relative;
+}
+
+/* Ligne de connexion entre les étapes (optionnel) */
+.import-process::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    z-index: 1;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .import-process::before {
+        display: block;
+    }
+}
+
+.process-step {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 162, 77, 0.15);
+    border-radius: 16px;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+.process-step:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* CHIFFRES STYLISÉS - Éliminer l'apparence "brouillon" */
+.step-number {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), #d4b560);
+    color: #000;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 2.2rem;
+    border: 5px solid var(--green-primary);
+    box-shadow: 0 8px 25px rgba(201, 162, 77, 0.4);
+    font-family: 'Playfair Display', serif;
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+
+.process-step:hover .step-number {
+    transform: translateX(-50%) scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(201, 162, 77, 0.6);
+}
+
+.process-step h3 {
+    color: var(--white);
+    margin: 2rem 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.process-step h3 i {
+    color: var(--gold);
+    font-size: 1.6rem;
+    opacity: 0.9;
+}
+
+.process-step p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+
+.section-subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Stock info pour import */
+.stock-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(45, 90, 63, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(45, 90, 63, 0.3);
+}
+
+.import-status {
+    background: var(--green-primary);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Badge spécifique import */
+.vehicle-card .tag-occasion.import-tag {
+    background: var(--green-primary);
+    color: white;
+    font-weight: 600;
+}
+
+/* Responsive Import */
+@media (max-width: 992px) {
+    .hero-import {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-import h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-import p {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .search-box-hero {
+        max-width: 500px;
+        margin: 2rem auto 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-import {
+        height: 65vh;
+        min-height: 450px;
+        margin-top: 70px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .hero-import h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .hero-import p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .search-box-hero {
+        max-width: 100%;
+        padding: 6px 20px;
+        margin: 1.5rem auto 0;
+    }
+    
+    .search-box-hero input {
+        padding: 16px 0;
+        font-size: 1rem;
+    }
+    
+    /* Processus sur mobile */
+    .import-process {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+    }
+    
+    .process-step {
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        top: -30px;
+    }
+    
+    .section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+    }
+
+    .stock-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-import {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-import h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-import p {
+        font-size: 0.95rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .step-number {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+        top: -27px;
+    }
+}
+
+/* Animation supplémentaire pour les étapes */
+@keyframes floatStep {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.step-number {
+    animation: floatStep 3s ease-in-out infinite;
+}
+
+.process-step:nth-child(2) .step-number {
+    animation-delay: 0.5s;
+}
+
+.process-step:nth-child(3) .step-number {
+    animation-delay: 1s;
+}
+
+.process-step:nth-child(4) .step-number {
+    animation-delay: 1.5s;
+}
+
+.process-step:nth-child(5) .step-number {
+    animation-delay: 2s;
+}
+
+.process-step:nth-child(6) .step-number {
+    animation-delay: 2.5s;
+}
+
+@media (max-width: 480px) {
+    .hero-import h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-import p {
+        font-size: 0.95rem;
+    }
+    
+    .search-box-hero input {
+        font-size: 16px; /* Empêche le zoom sur iOS */
+    }
+}
+/* =======================
+   CORRECTIONS DESKTOP IMPORT.HTML
+   ======================= */
+
+/* Desktop seulement - Améliorations pour grand écran */
+@media (min-width: 769px) {
+    /* HERO IMPORT - Version desktop améliorée */
+    .hero-import {
+        height: 85vh;
+        min-height: 700px;
+        padding: 100px 2rem;
+    }
+    
+    .hero-import h1 {
+        font-size: 4.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        text-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+    }
+    
+    .hero-import p {
+        font-size: 1.5rem;
+        max-width: 850px;
+        margin: 0 auto 3rem auto;
+        line-height: 1.8;
+        color: #f0f0f0;
+    }
+    
+    /* Barre de recherche desktop */
+    .search-box-hero {
+        max-width: 700px;
+        margin: 3rem auto 0;
+        padding: 12px 30px;
+    }
+    
+    .search-box-hero input {
+        padding: 20px 0;
+        font-size: 1.2rem;
+    }
+    
+    /* Processus d'import - Desktop */
+    .import-process {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        max-width: 1400px;
+    }
+    
+    .process-step {
+        padding: 3rem 2rem;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Chiffres améliorés desktop */
+    .step-number {
+        width: 85px;
+        height: 85px;
+        font-size: 2.8rem;
+        top: -42px;
+        border: 6px solid var(--green-primary);
+        box-shadow: 0 10px 35px rgba(201, 162, 77, 0.5);
+    }
+    
+    .process-step h3 {
+        font-size: 1.6rem;
+        margin: 2.5rem 0 1.5rem;
+    }
+    
+    .process-step p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+    
+    /* Section titres améliorés */
+    .section h2 {
+        font-size: 3.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.3rem;
+        max-width: 900px;
+    }
+    
+    /* Services container desktop */
+    .services-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .service-card {
+        padding: 2.5rem 2rem;
+    }
+    
+    /* Grid véhicules desktop */
+    .vehicle-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .vehicle-card {
+        min-height: 550px;
+    }
+}
+
+/* Très grands écrans (desktop large) */
+@media (min-width: 1200px) {
+    .hero-import h1 {
+        font-size: 4.8rem;
+    }
+    
+    .import-process {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .import-process::before {
+        display: block;
+    }
+    
+    .process-step {
+        min-height: 350px;
+    }
+}
+
+/* Amélioration du hover sur desktop */
+@media (min-width: 769px) {
+    .process-step:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .service-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--gold);
+        box-shadow: 0 15px 40px rgba(201, 162, 77, 0.2);
+    }
+}
+
+/* Correction du sous-titre section sur import seulement */
+.section[style*="background: rgba(45, 90, 63, 0.1)"] .section-subtitle,
+.section[style*="background: #080808"] .section-subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+/* Ligne de connexion visible seulement sur grand écran */
+@media (min-width: 1024px) {
+    .import-process::before {
+        display: block;
+    }
+}
+
+/* Boutons WhatsApp améliorés desktop */
+@media (min-width: 769px) {
+    .whatsapp-float {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 1.1rem 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Correction du texte caché sur mobile (assurance) */
+@media (max-width: 768px) {
+    .hero-import {
+        padding: 80px 1rem 60px;
+    }
+    
+    .hero-import h1 {
+        font-size: 2.2rem;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-import p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+}
+/* =======================
+   CORRECTIFS IMPORT (À COLLER À LA FIN DE STYLE.CSS)
+   ======================= */
+
+/* --- CORRECTIF MOBILE : Texte coupé --- */
+@media (max-width: 768px) {
+    .hero-import {
+        /* On enlève la hauteur fixe qui coupait le texte */
+        height: auto !important; 
+        min-height: 85vh;
+        /* On ajuste les marges pour que le texte ne soit pas sous le menu */
+        padding-top: 140px !important; 
+        padding-bottom: 60px !important;
+        margin-top: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-import .hero-content {
+        /* On s'assure que tout le contenu est visible */
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .hero-import h1 {
+        font-size: 2.2rem !important;
+        margin-top: 0;
+    }
+    
+    /* On répare la grille du processus sur mobile */
+    .import-process {
+        display: flex !important;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .process-step {
+        margin-bottom: 20px;
+    }
+}
+
+/* --- CORRECTIF DESKTOP : Processus et Style --- */
+@media (min-width: 1024px) {
+    .hero-import {
+        /* Hauteur propre pour desktop */
+        height: 90vh !important;
+        padding-top: 100px !important;
+    }
+
+    /* On force la grille à 3 colonnes */
+    .import-process {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 3rem !important;
+        margin-top: 5rem !important;
+    }
+
+    /* Ajustement des cartes pour qu'elles soient alignées */
+    .process-step {
+        height: 100%;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 3.5rem !important;
+    }
+
+    /* Réparation des ronds numérotés */
+    .step-number {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 2rem !important;
+        top: -35px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}

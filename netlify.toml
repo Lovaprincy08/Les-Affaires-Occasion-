@@ -1,0 +1,18 @@
+[build]
+  # On force le répertoire de publication à la racine
+  publish = "."
+  # On s'assure qu'aucune commande de build ne vient perturber le déploiement
+  command = ""
+
+[[redirects]]
+  # Si jamais le serveur cherche une route inexistante, 
+  # on le renvoie vers l'index au lieu de la 404
+  from = "/*"
+  status = 200
+  force = false
+  to = "/index.html"
+
+[headers]
+  [[headers.for]]
+    values = { "Cache-Control" = "public, max-age=0, must-revalidate" }
+    path = "/*"

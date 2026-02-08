@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ajoutez cette balise meta dans le <head> pour un meilleur contrôle sur mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Les Affaires Madagascar - Vente & Importation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Les Affaires" class="logo-circle">
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="occasion.html">Nos Occasions</a></li>
+                <li><a href="#import">Import Dubaï</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Votre Partenaire Automobile de Confiance</h1>
+            <p class="fade-in">Vente d'occasions premium et importation directe Dubaï à Madagascar.</p>
+            <div class="btn-container">
+                <a href="occasion.html" class="btn-primary fade-in">Voir les occasions</a>
+                <a href="#import" class="btn-secondary fade-in">Import Dubaï</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="stock" class="section">
+        <h2 class="fade-in">Occasions à la Une</h2>
+        <p class="section-subtitle fade-in">Nos meilleures opportunités du moment.</p>
+        
+        <div id="home-stock-container" class="vehicle-grid">
+            <p style="text-align:center; width:100%; color:gray;">Chargement des véhicules...</p>
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+            <a href="occasion.html" class="btn-secondary">Voir toutes les occasions</a>
+        </div>
+    </section>
+
+    <section id="import" class="import-dubai-section">
+        <div class="import-content">
+            <div class="import-text">
+                <h2>Importation Directe Dubaï</h2>
+                <p>Commandez votre véhicule sur mesure depuis les Émirats. Transparence totale et prix imbattables.</p>
+                <div class="import-features">
+                    <div class="feat"><span>40j</span><small>Délai</small></div>
+                    <div class="feat"><span>-20%</span><small>Économie</small></div>
+                </div>
+                <a href="https://wa.me/261324452423" class="btn-primary">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contactez-Nous</h2>
+        <p><i class="fa-solid fa-phone" style="color:var(--gold)"></i> +261 32 44 524 23</p>
+    </section>
+
+    <div id="vehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color:var(--gold); margin-bottom:1rem;"></h2>
+            <div id="modalGallery" class="modal-gallery"></div>
+            <p id="modalDesc" style="color:#ddd; margin-bottom:1.5rem; white-space: pre-line;"></p>
+            <button class="btn-secondary" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox(event)" ...>&times;</span>
+    
+    <div class="lightbox-nav">
+        <button class="lightbox-prev" onclick="prevImage()" aria-label="Image précédente">❮</button>
+        <button class="lightbox-next" onclick="nextImage()" aria-label="Image suivante">❯</button>
+    </div>
+    
+    <div class="lightbox-img-container">
+        <img id="lightboxImg" src="" alt="Zoom" class="lightbox-img">
+    </div>
+    
+    <div class="lightbox-dots" id="lightboxDots"></div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
